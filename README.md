@@ -1,5 +1,40 @@
+# Foodborne Disease Analysis using ML and Data Science Techniques  
+**Author**: Aditya Singhal | **ID**: 23BHI10065  
+
+---
+
+## Project Overview  
+This project leverages **Machine Learning (ML)** and **Data Science** techniques to analyze a dataset on **foodborne diseases**. The analysis aims to answer three key questions:  
+1. Are foodborne disease outbreaks increasing or decreasing?  
+2. Which contaminant is responsible for the most illnesses, hospitalizations, and deaths?  
+3. What location for food preparation poses the greatest risk of foodborne illness?  
+
+---
+
+## Workflow Steps  
+
+### 1. Data Loading and Preprocessing  
+- Dataset is loaded using `pandas` and checked for null values. Missing values are handled using forward filling (`ffill`).  
+- Features and target variables are separated, and the features are scaled using `StandardScaler`.  
+
+**Code Reference**:  
+```python
+import pandas as pd  
+from sklearn.preprocessing import StandardScaler  
+
+data = pd.read_csv('/mnt/data/outbreaks.csv')  
+data.fillna(method='ffill', inplace=True)  
+X = data.drop(columns=['target_column'])  # Replace with actual target column  
+y = data['target_column']  
+scaler = StandardScaler()  
+X_scaled = scaler.fit_transform(X)  
+
+
+
+
 ADITYA SINGHAL
 23BHI10065
+
 Tasks:
 1. You are provided with a dataset about foodborne diseases. Answer the
 questions after applying an appropriate ML model/Data Science
