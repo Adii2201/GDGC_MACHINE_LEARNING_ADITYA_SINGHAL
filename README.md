@@ -126,3 +126,71 @@ Outbreaks are generally decreasing over time.
 Unknown and Norovirus-related contaminants are the most harmful.
 Restaurants pose the highest risk for foodborne illnesses.
 
+
+
+TASK-02
+
+
+# Bone Marrow Cell Classification: Performance Analysis of Custom and Prebuilt CNN Models
+
+## Introduction
+This project involves classifying bone marrow cells into various categories using Convolutional Neural Networks (CNNs). The performance of two models—one prebuilt (such as VGG16 or ResNet) and one custom-designed CNN—is analyzed and compared to evaluate their ability to classify bone marrow cells accurately.
+
+The analysis uses multiple performance metrics:
+- **Accuracy**
+- **Precision**
+- **Recall**
+- **F1-Score**
+- **AUC-ROC**
+- **Confusion Matrix**
+
+## Dataset Description
+The dataset consists of images of bone marrow cells, categorized into 7 classes. The images are organized into subfolders, each corresponding to a different category. A CSV file provides a mapping of images to their respective labels. 
+
+### Dataset Access
+The dataset was accessed via Kaggle and includes:
+- **Image files**: Bone marrow cell images in various categories.
+- **CSV file**: Provides the mapping of image paths to their respective labels.
+
+## Data Preprocessing
+The dataset was preprocessed to make it suitable for training the CNN models:
+- **Image resizing**: All images were resized to 224x224 pixels.
+- **Normalization**: Image pixel values were normalized to the range [0, 1].
+- **One-hot encoding**: Labels were one-hot encoded to match the output format expected by the CNN models.
+
+## Model Architecture
+Two types of CNN models were trained:
+1. **Prebuilt CNN Model**: A fine-tuned prebuilt model (e.g., VGG16 or ResNet) with added dense layers tailored for this classification task.
+2. **Custom CNN Model**: A custom-designed CNN, featuring convolutional layers, max-pooling layers, and dropout for regularization.
+
+Both models were trained using:
+- **Loss function**: Categorical cross-entropy
+- **Evaluation metric**: Accuracy
+
+## Model Training and Evaluation
+Due to time constraints, both models were trained on a small subset of the dataset for a limited number of epochs. A validation set was used for model evaluation.
+
+### Metrics Used:
+- **Accuracy**: The proportion of correct predictions.
+- **Precision**: How many of the predicted positive cases were actually correct.
+- **Recall**: How many of the actual positive cases were correctly identified.
+- **F1-Score**: The harmonic mean of precision and recall.
+- **AUC-ROC**: The area under the receiver operating characteristic curve.
+- **Confusion Matrix**: A matrix showing how well the model performed across different classes.
+
+## Results and Comparison
+The models were evaluated based on the metrics mentioned above. Here’s a summary of the comparison:
+- **Accuracy**: Both models performed similarly, with a slight edge for the prebuilt model.
+- **Precision**: Precision was comparable, with slight variations across the classes.
+- **Recall**: Recall showed how well each model could identify positive cases.
+- **F1-Score**: Both models had good balance, with the custom model showing a marginally higher F1-score in certain classes.
+- **AUC-ROC**: Both models achieved high AUC-ROC scores, indicating strong discriminatory ability.
+- **Confusion Matrix**: Some misclassifications were observed in specific classes, pointing to areas for improvement.
+
+## Conclusion
+Both the prebuilt and custom CNN models demonstrated strong performance in the Bone Marrow Cell Classification task. The prebuilt model, benefiting from transfer learning, showed a slight advantage in accuracy and AUC-ROC. The custom model, though similar in performance, exhibited the potential for adaptation to specific tasks through its tailored architecture.
+
+### Future Work:
+- **Model fine-tuning**: Adjusting hyperparameters and fine-tuning both models for better performance.
+- **Dataset expansion**: Increasing the dataset size to improve generalization.
+- **Advanced architectures**: Exploring more advanced CNN architectures to enhance model performance.
